@@ -1,15 +1,11 @@
+@use "variables" as v;
 @import url('reset');
-
-
-$color-red: rgb(247, 121, 87);
-$color-peach: rgba(255, 215, 185, 0.91) 23%;
-$color-voilet: rgba(223, 159, 247, 0.8) 93%;
 
 body {
   font-family: "Teachers", sans-serif;
   background: linear-gradient(106.5deg,
-      $color-peach,
-      $color-voilet);
+      v.$color-peach,
+      v.$color-voilet);
 
   animation: {
     name: golgol;
@@ -20,33 +16,33 @@ body {
 }
 
 ::selection {
-  background: $color-red;
+  background: v.$color-red;
   color: white;
 }
 
 @keyframes golgol {
   0% {
     background: linear-gradient(20deg,
-        $color-peach,
-        $color-voilet);
+        v.$color-peach,
+        v.$color-voilet);
   }
 
   25% {
     background: linear-gradient(80deg,
-        $color-peach,
-        $color-voilet);
+        v.$color-peach,
+        v.$color-voilet);
   }
 
   50% {
     background: linear-gradient(120deg,
-        $color-peach,
-        $color-voilet);
+        v.$color-peach,
+        v.$color-voilet);
   }
 
   100% {
     background: linear-gradient(160deg,
-        $color-peach,
-        $color-voilet);
+        v.$color-peach,
+        v.$color-voilet);
   }
 }
 
