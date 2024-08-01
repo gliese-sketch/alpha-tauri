@@ -6,15 +6,16 @@
 
 body {
   font-family: "Teachers", sans-serif;
-  background: linear-gradient(
-    106.5deg,
-    rgba(255, 215, 185, 0.91) 23%,
-    rgba(223, 159, 247, 0.8) 93%
-  );
-  animation-name: golgol;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
+  background: linear-gradient(106.5deg,
+      rgba(255, 215, 185, 0.91) 23%,
+      rgba(223, 159, 247, 0.8) 93%);
+
+  animation: {
+    name: golgol;
+    duration: 5s;
+    iteration-count: infinite;
+    timing-function: ease;
+  }
 }
 
 ::selection {
@@ -24,32 +25,27 @@ body {
 
 @keyframes golgol {
   0% {
-    background: linear-gradient(
-      20deg,
-      rgba(255, 215, 185, 0.91) 23%,
-      rgba(223, 159, 247, 0.8) 93%
-    );
+    background: linear-gradient(20deg,
+        rgba(255, 215, 185, 0.91) 23%,
+        rgba(223, 159, 247, 0.8) 93%);
   }
+
   25% {
-    background: linear-gradient(
-      80deg,
-      rgba(255, 215, 185, 0.91) 23%,
-      rgba(223, 159, 247, 0.8) 93%
-    );
+    background: linear-gradient(80deg,
+        rgba(255, 215, 185, 0.91) 23%,
+        rgba(223, 159, 247, 0.8) 93%);
   }
+
   50% {
-    background: linear-gradient(
-      120deg,
-      rgba(255, 215, 185, 0.91) 23%,
-      rgba(223, 159, 247, 0.8) 93%
-    );
+    background: linear-gradient(120deg,
+        rgba(255, 215, 185, 0.91) 23%,
+        rgba(223, 159, 247, 0.8) 93%);
   }
+
   100% {
-    background: linear-gradient(
-      160deg,
-      rgba(255, 215, 185, 0.91) 23%,
-      rgba(223, 159, 247, 0.8) 93%
-    );
+    background: linear-gradient(160deg,
+        rgba(255, 215, 185, 0.91) 23%,
+        rgba(223, 159, 247, 0.8) 93%);
   }
 }
 
@@ -68,67 +64,79 @@ aside {
   padding: 2vw;
 }
 
-/* Header */
+/* 
+  MARK: Header
+*/
 header {
   display: flex;
   justify-content: space-between;
+
+  .logo {
+    height: 20px;
+    width: 20px;
+    background: black;
+    transform: rotate(45deg);
+    transition: 0.5s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: rotate(90deg);
+      border-radius: 6px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    text-align: right;
+    color: red;
+    cursor: pointer;
+
+    li:first-child {
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: black;
+      font-size: 20px;
+    }
+  }
 }
 
-.logo {
-  height: 20px;
-  width: 20px;
-  background: black;
-  transform: rotate(45deg);
-  transition: 0.5s ease;
+
+/* 
+  MARK: Main
+*/
+main {
+  h1 {
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 10px;
+  }
 }
 
-.logo:hover {
-  cursor: pointer;
-  transform: rotate(90deg);
-  border-radius: 6px;
-}
 
-header ul {
-  list-style: none;
-  text-align: right;
-  color: red;
-  cursor: pointer;
-}
-
-header ul li:first-child {
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: black;
-  font-size: 20px;
-}
-
-/* Main */
-h1 {
-  font-size: 70px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 10px;
-}
 /* Footer */
 footer {
   align-self: center;
+
+  p {
+    font-size: 12px;
+    width: 80%;
+  }
 }
-footer p {
-  font-size: 12px;
-  width: 80%;
-}
+
+
 
 /* ASIDE */
 aside {
   grid-column: 2;
   grid-row: 1 / -1;
   padding-right: 10vw;
-}
 
-aside video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 /* 
@@ -139,13 +147,16 @@ aside video {
     grid-template-columns: 100%;
     grid-template-rows: 25% 30% 15% 30%;
   }
+
   h1 {
     font-size: 50px;
     font-weight: 500;
   }
+
   footer p {
     width: 100%;
   }
+
   aside {
     grid-row: 4;
     grid-column: 1;
